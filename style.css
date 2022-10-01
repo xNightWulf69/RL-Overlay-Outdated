@@ -1,0 +1,1517 @@
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2);
+}
+body {
+	font-family: Roboto-Bold;
+}
+body {
+	background-color: black;
+}
+.scorebugleft, .scorebugright, .timer, .overtime {
+	position: absolute;
+}
+.scorebugleft {
+	left: 356px;
+	background-color: rgba(30,30,30, 0.95);
+	height: 85px;
+	width: 500px;
+	top: 0px;
+	color: #FFFFFF;
+	font-size: 80px;
+	border-bottom: 10px solid blue;
+	box-shadow: -5px 0px 20px 10px blue;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+}
+.scorebugright {
+	left: 1055px;
+	background-color: rgba(30,30,30, 0.95);
+	height: 85px;
+	width: 500px;
+	top: 0px;
+	color: #FFFFFF;
+	text-align: center;
+	border-bottom: 10px solid orange;
+	border-right: 10px solid orange;
+	border-radius: 0px 0px 5px 0px;
+	box-shadow: 5px 0px 20px 10px orange;
+	clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+}
+.bluename {
+	position: absolute;
+	color: #0000FF;
+	font-size: 40px;
+	text-align: center;
+	height: 85px;
+	width: 355px;
+	left: 425px;
+	top: 30px;
+}
+.orangename {
+	position: absolute;
+	color: #FFA500;
+	font-size: 40px;
+	text-align: center;
+	height: 85px;
+	width: 350px;
+	left: 1130px;
+	top: 30px;
+}
+.bluescore {
+	position: absolute;
+	background-color: #0000FF;
+	width: 112px;
+	top: 0px;
+	height: 65px;
+	left: 745px;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+	border-right: 10px solid white;
+    box-shadow: inset 3px 0px 20px 0px #323232;
+	z-index: 21;
+}
+.bluescorenumber {
+	position: absolute;
+	color: #FFFFFF;
+	font-size: 50px;
+	background-color: transparent;
+	text-align: center;
+	top: 0px;
+	left: 790px;
+	width: 70px;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+	z-index: 22;
+}
+.orangescore {
+	position: absolute;
+	background-color: #FFA500;
+	width: 112px;
+	top: 0px;
+	left: 1055px;
+	height: 65px;
+	clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+	border-left: 10px solid white;
+    box-shadow: inset -3px 0px 20px 0px #323232;
+	z-index: 21;
+}
+.orangescorenumber {
+	position: absolute;
+	color: #FFFFFF;
+	font-size: 50px;
+	background-color: transparent;
+	text-align: center;
+	top: 0px;
+	left: 1060px;
+	width: 70px;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+	z-index: 22;
+}
+.timer {
+	left: 865px;
+	height: 95px;
+	width: 190px;
+	background-color: rgba(30,30,30, 0.95);
+	color: #FFFFFF;
+	top: 0px;
+	text-align: center;
+	font-size: 70px;
+	padding-top: 10px;
+	text-shadow: 4px 4px 5px #939393;
+}
+.overtime {
+	position: absolute;
+	left: 865px;
+	top: 96px;
+	width: 190px;
+	height: 30px;
+	background-color: rgba(30,30,30, 0.95);
+	font-size: 30px;
+	color: #FFFFFF;
+	text-align: center;
+	border-top: 10px solid white;
+	border-radius: 0px 0px 5px 5px;
+}
+.blue-team-active {
+	position: absolute;
+	top: 950px;
+	left: 690px;
+	color: #FFFFFF;
+	font-size: 30px;
+	font-family: Ariel, Helvetica, sans-serif;
+	background-color: rgba(30,30,30, 0.95);
+	width: 700px;
+	height: 120px;
+	border-radius: 5px;
+	text-align: right;
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+.orange-team-active {
+	position: absolute;
+	top: 950px;
+	left: 690px;
+	color: #FFFFFF;
+	font-size: 30px;
+	font-family: Ariel, Helvetica, sans-serif;
+	background-color: rgba(30,30,30, 0.95);
+	width: 700px;
+	height: 120px;
+	border-radius: 5px;
+	text-align: right;
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+.tableblue {
+	color: #FFFFFF;
+}
+.tableorange {
+	color: #FFFFFF;
+}
+.blue-active-p-bar {
+	background-color: #008000;
+	height: 100px;
+	width: 40px;
+	text-align: center;
+	border-radius: 5px;
+}
+.orange-active-p-bar {
+	background-color: #FFA500;
+	height: 100px;
+	width: 40px;
+	text-align: center;
+	border-radius: 5px;
+}
+.BlueBoostBorder {
+	display: flex;
+	position: absolute;
+	text-align: center;
+	color: #FFFFFF;
+	height: 100px;
+	top: 937px;
+	left: 990px;
+	align-items: flex-end;
+}
+.OrangeBoostBorder {
+	display: flex;
+	position: absolute;
+	text-align: center;
+	color: #FFFFFF;
+	height: 100px;
+	top: 950px;
+	left: 1118px;
+	align-items: flex-end;
+}
+.bg-blue-team{
+	background-color: rgba(30,30,30, 0.95);
+	background-size: cover;
+	color: #FFFFFF;
+	width: 300px;
+	top: 500px;
+}
+.bg-orange-team{
+	background-color: rgba(30,30,30, 0.95);
+	background-size: cover;
+	color: #FFFFFF;
+	width: 300px;
+	top: 500px;
+}
+[class="player-box border border-dark text-dark bg-blue-team rounded mt-2 d-none"] {
+	position: absolute;
+	width: 320px !important;
+	left: 462px !important;
+	z-index: 1;
+	height: 100px;
+}
+[class="player-box border border-dark text-dark bg-orange-team rounded mt-2 d-none"] {
+	position: absolute;
+	width: 320px !important;
+	left: 462px !important;
+	z-index: 1;
+	height: 100px;
+}
+#blue-player-3-p-bar, #blue-player-2-p-bar, #blue-player-1-p-bar {
+	background-color: #0000FF;
+	height: 20px;
+	clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
+	font-size: 19px;
+	color: #FFFFFF;
+}
+#orange-player-3-p-bar, #orange-player-2-p-bar, #orange-player-1-p-bar {
+	background-color: #FFA500;
+	height: 20px;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 7% 100%);
+	font-size: 19px;
+	color: #FFFFFF;
+	text-align: right;
+}
+#blue-player-3 {
+	left: 10px !important;
+	top: 970px;
+	z-index: 1;
+	clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+	height: 80px;
+}
+#blue-player-2 {
+	left: 10px !important;
+	top: 850px;
+	z-index: 1;
+	clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+	height: 80px;
+}
+#blue-player-1 {
+	left: 10px !important;
+	top: 730px;
+	z-index: 1;
+	clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+	height: 80px;
+}
+#orange-player-3 {
+	left: 1590px !important;
+	top: 970px;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+	height: 80px;
+}
+#orange-player-2 {
+	left: 1590px !important;
+	top: 850px;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+	height: 80px;
+}
+#orange-player-1 {
+	left: 1590px !important;
+	top: 730px;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+	height: 80px;
+}
+.fa-solid, .fas {
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	margin-left: 12px;
+}
+.replay {
+	position: absolute;
+	z-index: 25;
+}
+#myVideo {
+	z-index: 2;
+}
+.statfeedorangegoal {
+	position: absolute;
+	background-color: rgba(30,30,30, 0);
+	height: 85px;
+	width: 200px;
+	color: #FFFFFF;
+	font-size: 40px;
+	left: 1700px;
+}
+.replaybox {
+	position: absolute;
+	height: 200px;
+	width: 400px;
+	background-color: rgba(30,30,30, 0.95);
+	color: #FFFFFF;
+	font-size: 50px;
+	text-align: center;
+	top: 400px;
+	left: 800px;
+}
+.scorer, .assister, .ballspeed, .ballspeedmph {
+	color: #FFFFFF;
+	font-size: 30px;
+	text-align: center;
+}
+#b {
+	padding-right: 300px;
+}
+.bluegoals {
+	position: absolute;
+	left: 0px;
+	top:30px;
+}
+.blue-active-goals {
+	position: absolute;
+	left: 145px;
+	top:30px;
+}
+.blueshots {
+	position: absolute;
+	left: 0px;
+	top:60px;
+}
+.blue-active-shots {
+	position: absolute;
+	left: 145px;
+	top:60px;
+}
+.blueassists {
+	position: absolute;
+	left: 0px;
+	top:90px;
+}
+.blue-active-assists {
+	position: absolute;
+	left: 145px;
+	top:90px;
+}
+.bluesaves {
+	position: absolute;
+	left: 0px;
+	top: 120px;
+}
+.blue-active-saves {
+	position: absolute;
+	left: 145px;
+	top: 120px;
+}
+.bluedemos {
+	position: absolute;
+	left: 0px;
+	top: 120px;
+}
+.blue-active-demos {
+	position: absolute;
+	left: 145px;
+	top: 120px;
+}
+.bp1 {
+	position: absolute;
+	top: 810px;
+	width: 241px;
+	left: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
+}
+.bp2 {
+	position: absolute;
+	top: 930px;
+	width: 241px;
+	left: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
+}
+.bp3 {
+	position: absolute;
+	top: 1050px;
+	width: 241px;
+	left: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
+}
+.op1 {
+	position: absolute;
+	top: 810px;
+	width: 241px;
+	left: 1669px;
+	align-items: flex-end;
+	display: flex;
+	flex-direction: row-reverse;
+	background-color: rgba(255, 255, 255, 0.5);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 7% 100%);
+}
+.op2{
+	position: absolute;
+	top: 930px;
+	width: 241px;
+	left: 1669px;
+	align-items: flex-end;
+	display: flex;
+	flex-direction: row-reverse;
+	background-color: rgba(255, 255, 255, 0.5);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 7% 100%);
+}
+.op3{
+	position: absolute;
+	top: 1050px;
+	width: 241px;
+	left: 1669px;
+	align-items: flex-end;
+	display: flex;
+	flex-direction: row-reverse;
+	background-color: rgba(255, 255, 255, 0.5);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 7% 100%);
+}
+.blueplayer3goals {
+	height: 40px;
+	width: 40px;
+	background-image: url(goal.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.blue-player-3-goals {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer3assist {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.blue-player-3-assists {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer3save {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f9/Save_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.blue-player-3-saves {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer3shot {
+	height: 40px;
+	width: 40px;
+	background-image: url(https://static.wikia.nocookie.net/rocketleague/images/0/06/Shot_on_Goal_points_icon.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+	color: #FFFFFF;
+}
+.blue-player-3-shots {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer2goals {
+	height: 40px;
+	width: 40px;
+	background-image: url(goal.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.blue-player-2-goals {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer2assist {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.blue-player-2-assists {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer2save {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f9/Save_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.blue-player-2-saves {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer2shot {
+	height: 40px;
+	width: 40px;
+	background-image: url(https://static.wikia.nocookie.net/rocketleague/images/0/06/Shot_on_Goal_points_icon.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+	color: #FFFFFF;
+}
+.blue-player-2-shots {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer1goals {
+	height: 40px;
+	width: 40px;
+	background-image: url(goal.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.blue-player-1-goals {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer1assist {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.blue-player-1-assists {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer1save {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f9/Save_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.blue-player-1-saves {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.blueplayer1shot {
+	height: 40px;
+	width: 40px;
+	background-image: url(https://static.wikia.nocookie.net/rocketleague/images/0/06/Shot_on_Goal_points_icon.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+	color: #FFFFFF;
+}
+.blue-player-1-shots {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer3goals {
+	height: 40px;
+	width: 40px;
+	background-image: url(goal.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.orange-player-3-goals {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer3assist {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.orange-player-3-assists {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer3save {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f9/Save_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.orange-player-3-saves {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer3shot {
+	height: 40px;
+	width: 40px;
+	background-image: url(https://static.wikia.nocookie.net/rocketleague/images/0/06/Shot_on_Goal_points_icon.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+	color: #FFFFFF;
+}
+.orange-player-3-shots {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer2goals {
+	height: 40px;
+	width: 40px;
+	background-image: url(goal.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.orange-player-2-goals {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer2assist {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.orange-player-2-assists {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer2save {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f9/Save_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.orange-player-2-saves {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer2shot {
+	height: 40px;
+	width: 40px;
+	background-image: url(https://static.wikia.nocookie.net/rocketleague/images/0/06/Shot_on_Goal_points_icon.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+	color: #FFFFFF;
+}
+.orange-player-2-shots {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer1goals {
+	height: 40px;
+	width: 40px;
+	background-image: url(goal.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.orange-player-1-goals {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer1assist {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.orange-player-1-assists {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer1save {
+	height: 40px;
+	width: 40px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f9/Save_points_icon.png");
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+}
+.orange-player-1-saves {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+.orangeplayer1shot {
+	height: 40px;
+	width: 40px;
+	background-image: url(https://static.wikia.nocookie.net/rocketleague/images/0/06/Shot_on_Goal_points_icon.png);
+	background-size: cover;
+	transform: translate3d(9px, -16px, 0px);
+	color: #FFFFFF;
+}
+.orange-player-1-shots {
+	font-size: 20px;
+	transform: translate3d(10px, -6px, 10px);
+}
+#saveblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f9/Save_points_icon.png");
+}
+#assistblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png");
+}
+#shotblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/0/06/Shot_on_Goal_points_icon.png");
+}
+#goalblue{
+	background-image: url("goal.png");
+}
+#goalorange{
+	background-image: url("goal.png");
+}
+#demoblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/9/93/Demolition_points_icon.png");
+}
+#overtimeblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/3/31/Overtime_Goal_points_icon.png");
+}
+#aerialblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/85/Aerial_Goal_points_icon.png");
+}
+#backwardsblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/1/15/Backwards_Goal_points_icon.png");
+}
+#bicycleblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/3/3b/Bicycle_Goal_points_icon.png");
+}
+#longblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/3/3c/Long_Goal_points_icon.png");
+}
+#turtleblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/6/66/Turtle_Goal_points_icon.png");
+}
+#swishblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/e/e1/Swish_Goal_points_icon.png");
+}
+#playmakerblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/b/b4/Playmaker_points_icon.png");
+}
+#epicblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/5/5e/Epic_Save_points_icon.png");
+}
+#saviorblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/9/96/Savior_points_icon.png");
+}
+#poolblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/c/ca/Pool_Shot_points_icon.png");
+}
+#extermblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/4/49/Extermination_points_icon.png");
+}
+#damageblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/d/da/Damage_points_icon.png");
+}
+#ultrablue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/3/3e/Ultra_Damage_points_icon.png");
+}
+#hatblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f2/Hat_Trick_points_icon.png");
+}
+#highblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/d/d4/High_Five_points_icon.png");
+}
+#lowblue{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/83/Low_Five_points_icon.png");
+}
+#shotorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/0/06/Shot_on_Goal_points_icon.png");
+}
+#assistorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png");
+}
+#saveorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f9/Save_points_icon.png");
+}
+#demoorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/9/93/Demolition_points_icon.png");
+}
+#overtimeorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/3/31/Overtime_Goal_points_icon.png");
+}
+#aerialorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/85/Aerial_Goal_points_icon.png");
+}
+#backwardsorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/1/15/Backwards_Goal_points_icon.png");
+}
+#bicycleorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/3/3b/Bicycle_Goal_points_icon.png");
+}
+#longorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/3/3c/Long_Goal_points_icon.png");
+}
+#turtleorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/6/66/Turtle_Goal_points_icon.png");
+}
+#swishorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/e/e1/Swish_Goal_points_icon.png");
+}
+#playmakerorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/b/b4/Playmaker_points_icon.png");
+}
+#epicorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/5/5e/Epic_Save_points_icon.png");
+}
+#saviororange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/9/96/Savior_points_icon.png");
+}
+#poolorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/c/ca/Pool_Shot_points_icon.png");
+}
+#extermorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/4/49/Extermination_points_icon.png");
+}
+#damageorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/d/da/Damage_points_icon.png");
+}
+#ultraorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/3/3e/Ultra_Damage_points_icon.png");
+}
+#hatorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f2/Hat_Trick_points_icon.png");
+}
+#highorange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/d/d4/High_Five_points_icon.png");
+}
+#loworange{
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/83/Low_Five_points_icon.png");
+}
+.blue-active-goals {
+    position: absolute;
+    left: 75px;
+    top: 70px;
+}
+.blue-active-shots {
+    position: absolute;
+    left: 435px;
+    top: 70px;
+}
+.blue-active-assists {
+    position: absolute;
+    left: 195px;
+    top: 70px;
+}
+.blue-active-saves {
+    position: absolute;
+    left: 315px;
+    top: 70px;
+}
+.blue-active-demos {
+    position: absolute;
+    left: 555px;
+    top: 70px;
+}
+.bluegoals {
+    position: absolute;
+    left: 10px;
+    top: 60px;
+    background-image: url(goal.png);
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+.blueassists {
+    position: absolute;
+    left: 130px;
+    top: 60px;
+    background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png");
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+.bluesaves {
+    position: absolute;
+    left: 250px;
+    top: 60px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f9/Save_points_icon.png");
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+.blueshots {
+    position: absolute;
+    left: 370px;
+    top: 60px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/0/06/Shot_on_Goal_points_icon.png");
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+.bluedemos {
+    position: absolute;
+    left: 490px;
+    top: 60px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/9/93/Demolition_points_icon.png");
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+.blueactivecontainer {
+	position: absolute;
+	background-color: blue;
+	width: 380px;
+	height: 60px;
+	color: white;
+	font-size: 30px;
+	text-align: left;
+	top: 920px;
+	left: 710px;
+	z-index: 20;
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+.blue-active-name {
+	position: absolute;
+	width: 380px;
+	height: 48px;
+	color: white;
+	font-size: 30px;
+	text-align: left;
+	z-index: 20;
+	padding-top: 12px;
+    padding-left: 20px;
+	border-left: 10px solid white;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+	box-shadow: inset -95px -13px 80px -17px #080808;
+}
+.blueactiveboostcontainer {
+	position: absolute;
+    width: 365px;
+	height: 40px;
+	background-color: rgba(255, 255, 255, 0.5);
+	clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+	top: 920px;
+	left: 1050px;
+	z-index: 19;
+	
+}
+.blue-active-boost {
+    width: 365px;
+	height: 40px;
+	background-color: blue;
+}
+.blue-active-boostnumber {
+	height: 30px;
+	width: 30px;
+	color: white;
+	font-size: 40px;
+	top: -20px;
+	left: 20px;
+	z-index: 30;
+	transform: translate3d(147px, -44px, 0px);
+	text-align: center;
+}
+.orange-active-goals {
+    position: absolute;
+    left: 75px;
+    top: 70px;
+}
+.orange-active-shots {
+    position: absolute;
+    left: 435px;
+    top: 70px;
+}
+.orange-active-assists {
+    position: absolute;
+    left: 195px;
+    top: 70px;
+}
+.orange-active-saves {
+    position: absolute;
+    left: 315px;
+    top: 70px;
+}
+.orange-active-demos {
+    position: absolute;
+    left: 555px;
+    top: 70px;
+}
+.orangegoals {
+    position: absolute;
+    left: 10px;
+    top: 60px;
+    background-image: url(goal.png);
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+.orangeassists {
+    position: absolute;
+    left: 130px;
+    top: 60px;
+    background-image: url("https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png");
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+.orangesaves {
+    position: absolute;
+    left: 250px;
+    top: 60px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/f/f9/Save_points_icon.png");
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+.orangeshots {
+    position: absolute;
+    left: 370px;
+    top: 60px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/0/06/Shot_on_Goal_points_icon.png");
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+.orangedemos {
+    position: absolute;
+    left: 490px;
+    top: 60px;
+	background-image: url("https://static.wikia.nocookie.net/rocketleague/images/9/93/Demolition_points_icon.png");
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+.orangeactivecontainer {
+	position: absolute;
+	background-color: orange;
+	width: 380px;
+	height: 60px;
+	color: white;
+	font-size: 30px;
+	text-align: left;
+	top: 920px;
+	left: 710px;
+	z-index: 20;
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+.orange-active-name {
+	position: absolute;
+	width: 380px;
+	height: 48px;
+	color: white;
+	font-size: 30px;
+	text-align: left;
+	z-index: 20;
+	padding-top: 12px;
+    padding-left: 20px;
+	border-left: 10px solid white;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+	box-shadow: inset -95px -13px 80px -17px #080808;
+}
+.orangeactiveboostcontainer {
+	position: absolute;
+    width: 365px;
+	height: 40px;
+	background-color: rgba(255, 255, 255, 0.5);
+	clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+	top: 920px;
+	left: 1050px;
+	z-index: 19;
+	
+}
+.orange-active-boost {
+    width: 365px;
+	height: 40px;
+	background-color: orange;
+}
+.orange-active-boostnumber {
+	height: 30px;
+	width: 30px;
+	color: white;
+	font-size: 40px;
+	top: -20px;
+	left: 20px;
+	z-index: 30;
+	transform: translate3d(147px, -44px, 0px);
+	text-align: center;
+}
+.replaybox {
+	position: absolute;
+	top: 950px;
+	left: 690px;
+	color: #FFFFFF;
+	font-size: 30px;
+	font-family: Ariel, Helvetica, sans-serif;
+	background-color: rgba(30,30,30, 0.95);
+	width: 700px;
+	height: 120px;
+	border-radius: 5px;
+	text-align: right;
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+.replayactivecontainer {
+	position: absolute;
+	background-color: white;
+	width: 380px;
+	height: 60px;
+	color: black;
+	font-size: 30px;
+	text-align: left;
+	top: 920px;
+	left: 710px;
+	z-index: 20;
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+.replayboxactive {
+	position: absolute;
+	width: 380px;
+	height: 48px;
+	color: white;
+	font-size: 30px;
+	text-align: left;
+	z-index: 20;
+	padding-top: 12px;
+    padding-left: 20px;
+	border-left: 10px solid white;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+	box-shadow: inset -95px -13px 80px -17px #080808;
+}
+.scorer {
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+    top: 65px;
+    left: 85px;
+}
+.scorerimage {
+    position: absolute;
+    background-image: url(goal.png);
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+    top: 55px;
+    left: 20px;
+}
+.assister {
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+    top: 65px;
+    left: 430px;
+}
+.assisterimage {
+    position: absolute;
+    background-image: url(https://static.wikia.nocookie.net/rocketleague/images/8/8e/Assist_points_icon.png);
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+    top: 55px;
+    left: 360px;
+}
+.ballspeed {
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+    top: 15px;
+    left: 380px;
+}
+.ballspeedmph {
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+    top: 15px;
+    left: 505px;
+}
+.blue-player-3-shotsafter, .blue-player-2-shotsafter, .blue-player-1-shotsafter  {
+	width: 600px;
+	height: 600px;
+	color: white;
+	font-size: 400px;
+}
+@keyframes bluescore {
+	from {left: 530px;}
+	to {left: 5px;}
+}
+@keyframes bluescoreback {
+	from {left: 5px;}
+	to {left: 530px;}
+}
+.scorebugleftanim {
+    position: absolute;
+    left: 530px;
+    background-color: rgb(50 129 255);
+    height: 85px;
+    width: 515px;
+    top: 0px;
+    color: white;
+    font-size: 80px;
+    border-bottom: 10px solid #3281ff;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 18% 100%);
+    z-index: 20;
+	text-align: center;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+}
+.scorebugleftanimcontainer {
+    position: absolute;
+    width: 515px;
+    height: 145px;
+    overflow: hidden;
+    left: 352px;
+}
+#scorebugleftanim.scorebugleftgoal {
+    position: absolute;
+    left: 530px;
+    background-color: rgb(50 129 255);
+    height: 85px;
+    width: 515px;
+    top: 0px;
+    color: white;
+    font-size: 80px;
+    border-bottom: 10px solid #3281ff;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 18% 100%);
+    z-index: 20;
+	text-align: center;
+	animation: bluescore 1s;
+	animation-fill-mode: forwards; 
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+}
+#scorebugleftanim.scorebugleftgoalback {
+    position: absolute;
+    left: 530px;
+    background-color: rgb(50 129 255);
+    height: 85px;
+    width: 515px;
+    top: 0px;
+    color: white;
+    font-size: 80px;
+    border-bottom: 10px solid #3281ff;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 18% 100%);
+    z-index: 20;
+	text-align: center;
+	animation: bluescoreback 1s;
+	animation-fill-mode: forwards; 
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+}
+@keyframes orangescore {
+	from {left: -530px;}
+	to {left: -5px;}
+}
+@keyframes orangescoreback {
+	from {left: -5px;}
+	to {left: -530px;}
+}
+.scorebugrightanim {
+    position: absolute;
+    left: -530px;
+    background-color: rgb(255 0 0);
+    height: 85px;
+    width: 515px;
+    top: 0px;
+    color: white;
+    font-size: 80px;
+    border-bottom: 10px solid #ff0000;
+    clip-path: polygon(0% 0, 100% 0%, 82% 100%, 0% 100%);
+    z-index: 20;
+    text-align: center;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+}
+.scorebugrightanimcontainer {
+    position: absolute;
+    width: 515px;
+    height: 145px;
+    overflow: hidden;
+    left: 1054px;
+}
+#scorebugrightanim.scorebugrightgoal {
+    position: absolute;
+    left: 530px;
+    background-color: rgb(255 0 0);
+    height: 85px;
+    width: 515px;
+    top: 0px;
+    color: white;
+    font-size: 80px;
+    border-bottom: 10px solid #ff0000;
+    clip-path: polygon(0% 0, 100% 0%, 82% 100%, 0% 100%);
+    z-index: 20;
+	text-align: center;
+	animation: orangescore 1s;
+	animation-fill-mode: forwards; 
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+}
+#scorebugrightanim.scorebugrightgoalback {
+    position: absolute;
+    left: 530px;
+    background-color: rgb(255 0 0);
+    height: 85px;
+    width: 515px;
+    top: 0px;
+    color: white;
+    font-size: 80px;
+    border-bottom: 10px solid #ff0000;
+    clip-path: polygon(0% 0, 100% 0%, 82% 100%, 0% 100%);
+    z-index: 20;
+	text-align: center;
+	animation: orangescoreback 1s;
+	animation-fill-mode: forwards; 
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color:#323232;
+}
+.scoreboardblue, .scoreboardorange  {
+	color: white;
+	z-index: 51;
+	display: table;
+}
+#scoreboardblue {
+	font-size: 25px;
+	color: white;
+}
+#scoreboardorange {
+	font-size: 25px;
+	color: white;
+}
+.scoreboardimage {
+	position: absolute;
+	width: 1920px;
+	height: 1080px;
+	background-image: url(Background.png);
+	background-size: cover;
+	z-index: 50;
+}
+th, td {
+    padding: 35px;
+    padding-top: 90px;
+	text-align: center;
+}
+.scoreboardorange {
+	left: 1160px;
+	color: white;
+}
+.scoreboardbluecontainer {
+    height: 1200px;
+    z-index: 63;
+    position: absolute;
+    overflow: hidden;
+    left: 0px;
+    width: 936px;
+	font-weight: bold;
+    display: flex;
+    flex-direction: row;
+}
+.scoreboardorangecontainer {
+    height: 1200px;
+    z-index: 63;
+    position: absolute;
+    overflow: hidden;
+    left: 992px;
+    width: 936px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row-reverse;
+}
+#OrangePlayer3Name, #OrangePlayer2Name, #OrangePlayer1Name, #BluePlayer1Name, #BluePlayer2Name, #BluePlayer3Name {
+	max-width: 160px;
+	max-height: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.bluescorepercentage {
+    z-index: 70;
+	position: absolute;
+	color: white;
+	background-color: #0044ff;
+	height: 20px;
+}
+.Bluescorecontainer {
+    z-index: 70;
+    position: absolute;
+    background-color: rgb(223, 127, 0);
+    width: 230px;
+    height: 20px;
+    left: 844px;
+    top: 245px;
+}
+.bluegoalpercentage {
+    z-index: 70;
+	position: absolute;
+	color: white;
+	background-color: #0044ff;
+	height: 20px;
+}
+.Bluegoalcontainer {
+    z-index: 70;
+    position: absolute;
+    background-color: rgb(223, 127, 0);
+    width: 230px;
+    height: 20px;
+    left: 844px;
+    top: 400px;
+}
+.blueassistpercentage {
+    z-index: 70;
+	position: absolute;
+	color: white;
+	background-color: #0044ff;
+	height: 20px;
+}
+.Blueassistcontainer {
+    z-index: 70;
+    position: absolute;
+    background-color: rgb(223, 127, 0);
+    width: 230px;
+    height: 20px;
+    left: 844px;
+    top: 555px;
+}
+.bluesavespercentage {
+    z-index: 70;
+	position: absolute;
+	color: white;
+	background-color: #0044ff;
+	height: 20px;
+}
+.Bluesavescontainer {
+    z-index: 70;
+    position: absolute;
+    background-color: rgb(223, 127, 0);
+    width: 230px;
+    height: 20px;
+    left: 844px;
+    top: 710px;
+}
+.blueshotspercentage {
+    z-index: 70;
+	position: absolute;
+	color: white;
+	background-color: #0044ff;
+	height: 20px;
+}
+.Blueshotscontainer {
+    z-index: 70;
+    position: absolute;
+    background-color: rgb(223, 127, 0);
+    width: 230px;
+    height: 20px;
+    left: 844px;
+    top: 865px;
+}
+.bluescorename {
+    position: absolute;
+    color: #fff;
+    z-index: 70;
+    left: 920px;
+    top: 210px;
+    font-size: 30px;
+}
+.bluegoalname {
+    position: absolute;
+    color: #fff;
+    z-index: 70;
+    left: 920px;
+    top: 365px;
+    font-size: 30px;
+}
+.blueassistname {
+    position: absolute;
+    color: #fff;
+    z-index: 70;
+    left: 920px;
+    top: 520px;
+    font-size: 30px;
+}
+.bluesavename {
+    position: absolute;
+    color: #fff;
+    z-index: 70;
+    left: 920px;
+    top: 675px;
+    font-size: 30px;
+}
+.blueshotname {
+    position: absolute;
+    color: #fff;
+    z-index: 70;
+    left: 920px;
+    top: 830px;
+    font-size: 30px;
+}
+.blueunder {
+    position: absolute;
+    height: 10px;
+    width: 960px;
+    background-color: #0044ff;
+    top: 134px;
+    left: 0px;
+    z-index: 70;
+}
+.orangeunder {
+    position: absolute;
+    height: 10px;
+    width: 960px;
+    background-color: rgb(223, 127, 0);
+    top: 134px;
+    left: 961px;
+    z-index: 70;
+}
+.scoreboardblue, .scoreboardorange, .scoreboardimage, .Bluescorecontainer, .bluescorename, .Bluegoalcontainer, .bluegoalname, .Blueassistcontainer, .blueassistname {
+	visibility: hidden;
+}
+.Bluesavescontainer, .bluesavename, .Blueshotscontainer, .blueshotname, .blueunder, .orangeunder {
+	visibility: hidden;
+}

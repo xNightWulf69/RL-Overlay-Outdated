@@ -1,0 +1,329 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <link href="toastr.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+        <script src="toastr.js"></script>
+        <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="statfeedorangegoal"></div>
+      <div class="replay">
+            <video id="myVideo" width="1920" height="1080" style="z-index: 2">
+              <source src="transition.webm" type="video/webm">
+            </video>
+      </div>
+      <div class="scorebugleft"></div>
+    <div class="bluename">Blue</div>
+    <div class="bluescore"></div>
+    <div class="bluescorenumber">0</div>
+    <div class="scorebugright"></div>
+    <div class="orangename"></div></div>
+    <div class="orangescore"></div>
+    <div class="orangescorenumber">0</div>
+    <div class="replaybox">
+        <div class="scorerimage"></div>
+        <div class="scorer">Scorer</div>
+        <div class="assisterimage"></div>
+        <div class="assister">Assister</div>
+        <div class="assisterimage"></div>
+        <div class="ballspeed">88 KMH</div>
+      <div class="ballspeedmph">46 MPH</div>
+      </div>
+      </div>
+      <div class="scorebugleftanimcontainer">
+        <div class="scorebugleftanim" id="scorebugleftanim">GOAL!!</div>
+    </div>
+      <div class="scorebugrightanimcontainer">
+        <div class="scorebugrightanim" id="scorebugrightanim">GOAL!!</div>
+    </div>
+    <div class="timer"></div>
+    <div class="overtime"></div>
+    <div class="blueactivecontainer">
+            <div class="blue-active-name">Name</div>
+    </div>
+    <div class="replayactivecontainer">
+            <div class="replayboxactive">Replay</div>
+    </div>
+    <div class="blueactiveboostcontainer">
+            <div class="blue-active-boost"></div>
+        <div class="blue-active-boostnumber">20</div>
+    </div>
+    <div class="orangeactivecontainer">
+            <div class="orange-active-name">Name</div>
+    </div>
+    <div class="orangeactiveboostcontainer">
+            <div class="orange-active-boost"></div>
+        <div class="orange-active-boostnumber">20</div>
+    </div>
+    <div class="blue-team-active">
+        <div class="bluegoals"></div>
+        <div class="blue-active-goals">0</div>
+        <div class="blueassists"></div>
+        <div class="blue-active-assists">0</div>
+        <div class="bluesaves"></div>
+        <div class="blue-active-saves">0</div>
+        <div class="blueshots"></div>
+        <div class="blue-active-shots">0</div>
+        <div class="bluedemos"></div>
+        <div class="blue-active-demos">0</div>
+      </div>
+    <div class="orange-team-active">
+        <div class="orangegoals"></div>
+        <div class="orange-active-goals">0</div>
+        <div class="orangeassists"></div>
+        <div class="orange-active-assists">0</div>
+        <div class="orangesaves"></div>
+        <div class="orange-active-saves">0</div>
+        <div class="orangeshots"></div>
+        <div class="orange-active-shots">0</div>
+        <div class="orangedemos"></div>
+        <div class="orange-active-demos">0</div>
+    </div>
+    <div class="BlueBoostBorder" style="height: 100px; width: 300px;"></div>
+      <div class="bp3">
+        <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-3-p-bar"></div>
+      </div>
+            <div class="player-box border border-dark text-dark bg-blue-team rounded mt-2 d-none" id="blue-player-3">
+              <!-- players name -->
+              <h4 class="text-center" style="text-align: left; padding-left: 5px; margin-top: 10px; font-size: 20px; margin-bottom: 5px; border-bottom: 5px solid white;" id="blue-player-3-name">name</h4>
+              </div>
+              <!-- stat counters -->
+              <div class="container p-1">
+                <div class="row" id="bluep3" style="display: inline-flex; left: 3px; top: 1026px; position: absolute; font-size: 20px; color: white; z-index: 20;">
+                  <div class="row-sm-1"></div>
+                  <div class="blueplayer3goals"></div>
+                  <div class="blue-player-3-goals" style="width: 25px; left: 200px;">1</div>
+                  <div class="blueplayer3assist"></div>
+                  <div class="blue-player-3-assists" style="width: 25px">1</div>
+                  <div class="blueplayer3save"></div>
+                  <div class="blue-player-3-saves" style="width: 25px">1</div>
+                  <div class="blueplayer3shot"></div>
+                  <div class="blue-player-3-shots" style="width: 25px">1</div>
+                  <div class="row-sm-1"></div>
+                </div>
+              </div>
+       <!-- blue player 2 -->
+      <div class="bp2">
+        <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-2-p-bar"></div>
+      </div>
+            <div class="player-box border border-dark text-dark bg-blue-team rounded mt-2 d-none" id="blue-player-2">
+              <!-- players name -->
+              <h4 class="text-center" style="text-align: left; padding-left:5px; margin-top: 10px; font-size: 20px; margin-bottom: 5px; border-bottom: 5px solid white;" id="blue-player-2-name">name</h4>
+              </div>
+              <!-- stat counters -->
+              <div class="container p-1">
+                <div class="row" id="bluep2" style="display: inline-flex; left: 3px; top: 904px; position: absolute; font-size: 20px; color: white; z-index: 20;">
+                  <div class="row-sm-1"></div>
+                  <div class="blueplayer2goals"></div>
+                  <div class="blue-player-2-goals" style="width: 25px; left: 200px;">1</div>
+                  <div class="blueplayer2assist"></div>
+                  <div class="blue-player-2-assists" style="width: 25px; left: 200px;">1</div>
+                  <div class="blueplayer2save"></div>
+                  <div class="blue-player-2-saves" style="width: 25px; left: 200px;">1</div>
+                  <div class="blueplayer2shot"></div>
+                  <div class="blue-player-2-shots" style="width: 25px; left: 200px;">1</div>
+                  <div class="row-sm-1"></div>
+                </div>
+              </div>
+      <!-- blue player 1 -->
+      <div class="bp1">
+                <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-1-p-bar"></div>
+      </div>
+            <div class="player-box border border-dark text-dark bg-blue-team rounded mt-2 d-none" id="blue-player-1">
+              <!-- players name -->
+              <h4 class="text-center" style="text-align: left; padding-left:5px; margin-top: 10px; font-size: 20px; margin-bottom: 5px; border-bottom: 5px solid white;" id="blue-player-1-name">name</h4>
+              </div>
+              <!-- stat counters -->
+              <div class="container p-1">
+                <div class="row" id="bluep1" style="display: inline-flex; position: absolute; font-size: 20px; top: 784px; color: white; z-index: 20; left: 3px;">
+                  <div class="row-sm-1"></div>
+                  <div class="blueplayer1goals"></div>
+                  <div class="blue-player-1-goals" style="width: 25px; left: 200px;">1</div>
+                  <div class="blueplayer1assist"></div>
+                  <div class="blue-player-1-assists" style="width: 25px; left: 200px;">1</div>
+                  <div class="blueplayer1save"></div>
+                  <div class="blue-player-1-saves" style="width: 25px; left: 200px;">1</div>
+                  <div class="blueplayer1shot"></div>
+                  <div class="blue-player-1-shots" style="width: 25px; left: 200px;">1</div>
+                  <div class="row-sm-1"></div>
+                </div>
+              </div>
+      <!-- orange player 3 -->
+      <div class="op3">
+                <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="orange-player-3-p-bar"></div>
+            </div>
+            <div class="player-box border border-dark text-dark bg-orange-team rounded mt-2 d-none" id="orange-player-3">
+              <!-- players name -->
+              <h4 class="text-center" style="text-align: right; padding-right: 5px; margin-top: 10px; font-size: 20px; margin-bottom: 5px; border-bottom: 5px solid white;" id="orange-player-3-name">name</h4>
+              </div>
+              <!-- stat counters -->
+              <div class="container p-1">
+                <div class="row" id="orangep3" style="display: inline-flex; left: 1630px; top: 1026px; position: absolute; font-size: 20px; color: white; z-index: 20;">
+                  <div class="row-sm-1"></div>
+                  <div class="orangeplayer3goals"></div>
+                  <div class="orange-player-3-goals" style="width: 25px; left: 200px;">1</div>
+                  <div class="orangeplayer3assist"></div>
+                  <div class="orange-player-3-assists" style="width: 25px; left: 200px;">1</div>
+                  <div class="orangeplayer3save"></div>
+                  <div class="orange-player-3-saves" style="width: 25px; left: 200px;">1</div>
+                  <div class="orangeplayer3shot"></div>
+                  <div class="orange-player-3-shots" style="width: 25px; left: 200px;">1</div>
+                  <div class="row-sm-1"></div>
+                </div>
+              </div>
+      <!-- orange player 2 -->
+      <div class="op2">
+          <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="orange-player-2-p-bar"></div>
+      </div>
+            <div class="player-box border border-dark text-dark bg-orange-team rounded mt-2 d-none" id="orange-player-2">
+              <!-- players name -->
+              <h4 class="text-center" style="text-align: right; padding-right: 5px; margin-top: 10px; font-size: 20px; margin-bottom: 5px; border-bottom: 5px solid white;" id="orange-player-2-name">name</h4>
+              </div>
+              <!-- stat counters -->
+              <div class="container p-1">
+                <div class="row" id="orangep2" style="display: inline-flex; left: 1630px; top: 904px; position: absolute; font-size: 20px; color: white; z-index: 20;">
+                  <div class="row-sm-1"></div>
+                  <div class="orangeplayer2goals"></div>
+                  <div class="orange-player-2-goals" style="width: 25px; left: 200px;">1</div>
+                  <div class="orangeplayer2assist"></div>
+                  <div class="orange-player-2-assists" style="width: 25px; left: 200px;">1</div>
+                  <div class="orangeplayer2save"></div>
+                  <div class="orange-player-2-saves" style="width: 25px; left: 200px;">1</div>
+                  <div class="orangeplayer2shot"></div>
+                  <div class="orange-player-2-shots" style="width: 25px; left: 200px;">1</div>
+                  <div class="row-sm-1"></div>
+                </div>
+              </div>
+      <!-- orange player 1 -->
+      <div class="op1">
+                <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="orange-player-1-p-bar"></div>
+             </div>
+            <div class="player-box border border-dark text-dark bg-orange-team rounded mt-2 d-none" id="orange-player-1">
+              <h4 class="text-center" style="text-align: right; padding-right: 5px; margin-top: 10px; font-size: 20px; margin-bottom: 5px; border-bottom: 5px solid white;" id="orange-player-1-name">name</h4>
+              </div>
+              <!-- stat counters -->
+              <div class="container p-1">
+                <div class="row" id="orangep1" style="display: inline-flex; left: 1630px; top: 784px; position: absolute; font-size: 20px; color: white; z-index: 20;">
+                  <div class="row-sm-1"></div>
+                  <div class="orangeplayer1goals"></div>
+                  <div class="orange-player-1-goals" style="width: 25px; left: 200px;">1</div>
+                  <div class="orangeplayer1assist"></div>
+                  <div class="orange-player-1-assists" style="width: 25px; left: 200px;">1</div>
+                  <div class="orangeplayer1save"></div>
+                  <div class="orange-player-1-saves" style="width: 25px; left: 200px;">1</div>
+                  <div class="orangeplayer1shot"></div>
+                  <div class="orange-player-1-shots" style="width: 25px; left: 200px;">1</div>
+                  <div class="row-sm-1"></div>
+                </div>
+              </div>
+              <div class="scoreboardimage"></div>
+              <div class="scoreboardbluecontainer">
+              <div class="scoreboardblue">
+                <table id="scoreboardblue">
+                  <tr>
+                    <th id="bluename"></th>
+                    <th id="BluePlayer3Name"></th>
+                    <th id="BluePlayer2Name"></th>
+                    <th id="BluePlayer1Name"></th>
+                  </tr>
+                  <tr>
+                    <th id="bluescore"></th>
+                    <td id="BluePlayer3Score"></td>
+                    <td id="BluePlayer2Score"></td>
+                    <td id="BluePlayer1Score"></td>
+                  </tr>
+                  <tr>
+                    <th id="bluegoals"></th>
+                    <td id="BluePlayer3Goalss"></td>
+                    <td id="BluePlayer2Goalss"></td>
+                    <td id="BluePlayer1Goalss"></td>
+                  </tr>
+                  <tr>
+                    <th id="blueassists"></th>
+                    <td id="BluePlayer3Assists"></td>
+                    <td id="BluePlayer2Assists"></td>
+                    <td id="BluePlayer1Assists"></td>
+                  </tr>
+                  <tr>
+                    <th id="bluesaves"></th>
+                    <td id="BluePlayer3Saves"></td>
+                    <td id="BluePlayer2Saves"></td>
+                    <td id="BluePlayer1Saves"></td>
+                  </tr>
+                  <tr>
+                    <th id="blueshots"></th>
+                    <td id="BluePlayer3Shots"></td>
+                    <td id="BluePlayer2Shots"></td>
+                    <td id="BluePlayer1Shots"></td>
+                  </tr>
+                </table>
+            </div>
+          </div>
+          <div class="scoreboardorangecontainer">
+            <div class="scoreboardorange">
+              <table id="scoreboardorange">
+                <tr>
+                  <th id="OrangePlayer1Name"></th>
+                  <th id="OrangePlayer2Name"></th>
+                  <th id="OrangePlayer3Name"></th>
+                  <th id="orangename"></th>
+                </tr>
+                <tr>
+                  <td id="OrangePlayer1Score"></td>
+                  <td id="OrangePlayer2Score"></td>
+                  <td id="OrangePlayer3Score"></td>
+                  <th id="orangescore"></th>
+                </tr>
+                <tr>
+                  <td id="OrangePlayer1Goalss"></td>
+                  <td id="OrangePlayer2Goalss"></td>
+                  <td id="OrangePlayer3Goalss"></td>
+                  <th id="orangegoals"></th>
+                </tr>
+                <tr>
+                  <td id="OrangePlayer1Assists"></td>
+                  <td id="OrangePlayer2Assists"></td>
+                  <td id="OrangePlayer3Assists"></td>
+                  <th id="orangeassists"></th>
+                </tr>
+                <tr>
+                  <td id="OrangePlayer1Saves"></td>
+                  <td id="OrangePlayer2Saves"></td>
+                  <td id="OrangePlayer3Saves"></td>
+                  <th id="orangesaves"></th>
+                </tr>
+                <tr>
+                  <td id="OrangePlayer1Shots"></td>
+                  <td id="OrangePlayer2Shots"></td>
+                  <td id="OrangePlayer3Shots"></td>
+                  <th id="orangeshots"></th>
+                </tr>
+              </table>
+          </div>
+        </div>
+        <div class="Bluescorecontainer">
+        <div class="bluescorepercentage"></div>
+        </div>
+        <div class="bluescorename">Score</div>
+        <div class="Bluegoalcontainer">
+            <div class="bluegoalpercentage"></div>
+        </div>
+        <div class="bluegoalname">Goals</div>
+        <div class="Blueassistcontainer">
+            <div class="blueassistpercentage"></div>
+        </div>
+        <div class="blueassistname">Assists</div>
+        <div class="Bluesavescontainer">
+            <div class="bluesavespercentage"></div>
+        </div>
+        <div class="bluesavename">Saves</div>
+        <div class="Blueshotscontainer">
+            <div class="blueshotspercentage"></div>
+        </div>
+        <div class="blueshotname">Shots</div>
+        <div class="blueunder"></div>
+        <div class="orangeunder"></div>
+  </body>
+</html>
